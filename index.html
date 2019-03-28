@@ -12,6 +12,78 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <section id="authentication-page">
+        <div id="sign-in">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                    <form class="form-signin">
+                      <div class="form-label-group">
+                        <input type="email" id="inputEmailSignIn" class="form-control" placeholder="Email address" required autofocus>
+                        <label for="inputEmailSignIn">Email address</label>
+                      </div>
+
+                      <div class="form-label-group">
+                        <input type="password" id="inputPasswordSignIn" class="form-control" placeholder="Password" required>
+                        <label for="inputPasswordSignIn">Password</label>
+                      </div>
+                      <button id="sign-in-button" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+
+                      <button id="go-to-sign-up-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
+                      <hr class="my-4">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sign-up">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Sign Up</h5>
+                    <form class="form-signin">
+                      <div class="form-label-group">
+                        <input name="credentials[first-name]" type="text" id="inputFirstName" class="form-control" placeholder="First Name" required autofocus>
+                        <label for="inputFirstName">First Name</label>
+                      </div>
+                      <div class="form-label-group">
+                        <input name="credentials[last-name]" type="text" id="inputLastName" class="form-control" placeholder="Last Name" required autofocus>
+                        <label for="inputLastName">Last Name</label>
+                      </div>
+                      <div class="form-label-group">
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <label for="inputEmail">Email address</label>
+                      </div>
+                      <div class="form-label-group">
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus>
+                        <label for="inputPassword">Password</label>
+                      </div>
+                      <div class="form-label-group">
+                        <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+                        <label for="inputConfirmPassword">Confirm Password</label>
+                      </div>
+                        <button id="sign-up-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
+                      <button id="go-to-sign-in-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+
+                      <hr class="my-4">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="bucket-list-page">
+
+      </section>
     </body>
 </html>
