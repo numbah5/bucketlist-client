@@ -22,12 +22,12 @@
                     <h5 class="card-title text-center">Sign In</h5>
                     <form class="form-signin">
                       <div class="form-label-group">
-                        <input type="email" id="inputEmailSignIn" class="form-control" placeholder="Email address" required autofocus>
+                        <input name="credentials[email]" type="email" id="inputEmailSignIn" class="form-control" placeholder="Email address" required autofocus>
                         <label for="inputEmailSignIn">Email address</label>
                       </div>
 
                       <div class="form-label-group">
-                        <input type="password" id="inputPasswordSignIn" class="form-control" placeholder="Password" required>
+                        <input name="credentials[password]" type="password" id="inputPasswordSignIn" class="form-control" placeholder="Password" required>
                         <label for="inputPasswordSignIn">Password</label>
                       </div>
                       <button id="sign-in-button" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
@@ -58,15 +58,15 @@
                         <label for="inputLastName">Last Name</label>
                       </div>
                       <div class="form-label-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                        <label for="inputEmail">Email address</label>
+                        <input name="credentials[email]" type="email" id="inputEmailSignUp" class="form-control" placeholder="Email address" required autofocus>
+                        <label for="inputEmailSignUp">Email address</label>
                       </div>
                       <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus>
-                        <label for="inputPassword">Password</label>
+                        <input name="credentials[password]" type="password" id="inputPasswordSignUp" class="form-control" placeholder="Password" required autofocus>
+                        <label for="inputPasswordSignUp">Password</label>
                       </div>
                       <div class="form-label-group">
-                        <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+                        <input name="credentials[password_confirmation]" type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
                         <label for="inputConfirmPassword">Confirm Password</label>
                       </div>
                         <button id="sign-up-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
