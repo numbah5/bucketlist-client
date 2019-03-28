@@ -6,7 +6,8 @@ curl "http://localhost:4741/list-items" \
   --data '{
     "list-item": {
       "title": "'"${TITLE}"'",
-      "description": "'"${DESCRIPTION}"'"
+      "description": "'"${DESCRIPTION}"'",
+      "boolean": "'"${BOOL}"'"
     }
   }'
 
