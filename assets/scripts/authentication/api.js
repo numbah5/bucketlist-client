@@ -46,12 +46,10 @@ const signOut = (formData) => {
     },
     data: formData
   })
-}
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut
-
 }
