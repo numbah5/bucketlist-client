@@ -8,6 +8,7 @@ const signUpSuccess = () => {
     $('#user-message').text('successfully signed up!')
     $('form').trigger('reset')
   })
+}
 
 const signInSuccess = (responseData) => {
   $('#sign-up-button').on('submit', () => {
@@ -37,7 +38,7 @@ const signOutSuccess = (responseData) => {
       $('#user-message').text('')
     }, 2000)
   })
-
+}
 
 const signUpFailure = () => {
   $('#sign-up-button').text('error on sign up')
@@ -54,7 +55,6 @@ const signInFailure = () => {
   }, 2000)
   $('#sign-in-form').trigger('reset')
 }
-
 
 const changePasswordFailure = () => {
   $('#').text('error in changing password')

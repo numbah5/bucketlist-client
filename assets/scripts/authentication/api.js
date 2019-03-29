@@ -1,14 +1,12 @@
 'use strict'
 
-const authEvents = require('./events.js')
-const authApi = require('./api.js')
-const authUi = require('./ui.js')
+// const authEvents = require('./events.js')
+// const authApi = require('./api.js')
+// const authUi = require('./ui.js')
 const config = require('../config.js')
 const store = require('../store.js')
 
-
 const signUp = (formData) => {
-
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -26,7 +24,6 @@ const signIn = (formData) => {
 }
 
 const changePassword = (formData) => {
-
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -46,6 +43,7 @@ const signOut = (formData) => {
     },
     data: formData
   })
+}
 
 module.exports = {
   signUp,
