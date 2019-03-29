@@ -15,24 +15,21 @@ const getItemsSuccess = function (responseData) {
   $('#display').html(' ')
   for (let i = 0; i < (user.listItems).length); i++) {
 
-
-    const userHtml = (`
+const userHtml = (`
 
       <div class="col-sm-4 col-lg-3 box">
     <p>
-          ID: ${aa[i].id}
+          id: ID: ${user.listItems[i].id}
           <br>
-        Date: ${aa[i].date}
-        <br>
- Expenditure: $${aa[i].spend}.00
-
+          title: ${user.listItems[i].title}
+          <br>
+          description: ${user.listItems[i].description}
+          <br>
+          
      </p>
 
     </div>
     `)
-
-    $('#display').append(userHtml)
-  }
 }
 
 const createItemFailure = () => {
