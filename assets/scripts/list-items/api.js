@@ -6,9 +6,9 @@ const authUi = require('./ui.js')
 const config = require('../config.js')
 const store = require('../store.js')
 
-const onCreateItem = function (formData) {
+const createListItem = function (formData) {
   return $.ajax({
-      url: config.apiUrl + '/list-items/',
+      url: config.apiUrl + '/list-items',
       method: 'POST',
       headers: {
       Authorization: 'Token token=' + store.user.token
@@ -19,7 +19,7 @@ const onCreateItem = function (formData) {
 
 const onGetItems = function () {
   return $.ajax({
-    url: config.apiUrl + '/list-items/',
+    url: config.apiUrl + '/list-items',
     method: 'GET',
     headers: {
     Authorization: 'Token token=' + store.user.token
@@ -61,7 +61,7 @@ const onUpdateItem = function (formData) {
 }
 
 module.exports = {
-    onCreateItem,
+    createItem,
     onGetItems,
     // onGetItem,
     onUpdateItem,

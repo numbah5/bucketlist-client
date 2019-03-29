@@ -1,0 +1,44 @@
+
+{{#each errands as |errand|}}
+style="text-decoration: strikethrough:"
+
+  <form class="list-item" data-id="{{list-item.id}}">
+
+    <div class="update-field update-list-item">
+      {{#if list-item.boolean}}
+      <label>Done?</label>
+      <p> Yes!</p>
+      <p class="other-label">Change Done Status</p>
+      <input name="list-item[boolean]" type="checkbox" value="false">
+      {{else}}
+      <label>Done?</label>
+      <p>No</p>
+      <label>Change Done Status</label>
+      <input name="list-item[boolean]" type="checkbox" value="true">
+      {{/if}}
+    </div>
+
+    <div class="update-field update-list-item">
+      <label> Title:</label>
+      <p>{{limit list-item.title 15}}</p>
+      <p class="other-label">Change Title:</p>
+      <input name="list-item[title]" type="text" placeholder="Title">
+    </div>
+
+    <div class="update-field update-location">
+      <label>Description:</label>
+      <p>{{errand.location}}</p>
+      <p class="other-label">Change Description:</p>
+      <input name="list-item[description]" type="text" placeholder="Description">
+    </div>
+
+    <div class="update-list-item">
+      <button type="submit" value="Update List Item">Update</button>
+    </div>
+    <div class="delete-list-item">
+      <button type="reset" value="Delete List Item">Delete</button>
+    </div>
+
+  </form>
+
+{{/each}}
