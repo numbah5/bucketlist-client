@@ -13,7 +13,7 @@ const createListItemSuccess = (responseData) => {
 const getItemsSuccess = function (responseData) {
   const listItems = responseData.user.listItems
   $('#display').html(' ')
-  for (let i = 0; i < (user.listItems).length); i++) {
+  for (let i = 0; i < (user.listItems).length; i++) {
 
 const userHtml = (`
 
