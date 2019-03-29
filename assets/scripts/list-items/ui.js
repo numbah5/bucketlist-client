@@ -1,8 +1,8 @@
 'use strict'
 
 
-const createItemSuccess = (responseData) => {
-  $('#user-message').text('Successfully Logged Expense, Click Get Expenses!')
+const createListItemSuccess = (responseData) => {
+  $('#user-message').text('You have successfully added to your Bucket List!')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
@@ -25,7 +25,7 @@ const userHtml = (`
           <br>
           description: ${user.listItems[i].description}
           <br>
-          
+
      </p>
 
     </div>
@@ -91,6 +91,7 @@ const getItemsFailure = () => {
   // $('form').trigger('reset')
 }
 
+$('.bucket-list-item').css('text-decoration', 'line-through')
 
 module.exports = {
 createItemSuccess,
