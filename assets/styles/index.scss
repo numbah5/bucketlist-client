@@ -111,9 +111,13 @@ body {
   background-color: #3b5998;
 }
 
+.authentication-page {
+  height: 100vh;
+}
+
 .bucket-list-page {
   height: 100vh;
-  background-color: #333;
+  background-color: #F0EAD6;
 }
 
 nav {
@@ -150,6 +154,6 @@ nav {
   }
 }
 
-.list-items {
-  color: white;
+.bucket-list-item {
+  transition: line-through 5000ms ease-in-out 2s;
 }
