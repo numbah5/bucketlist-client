@@ -1,4 +1,3 @@
-
 {{#each errands as |errand|}}
 style="text-decoration: strikethrough:"
 
@@ -9,12 +8,12 @@ style="text-decoration: strikethrough:"
       <label>Done?</label>
       <p> Yes!</p>
       <p class="other-label">Change Done Status</p>
-      <input name="list-item[boolean]" type="checkbox" value="false">
+      <input name="listItems[boolean]" type="checkbox" value="false">
       {{else}}
       <label>Done?</label>
       <p>No</p>
       <label>Change Done Status</label>
-      <input name="list-item[boolean]" type="checkbox" value="true">
+      <input name="listItems[boolean]" type="checkbox" value="true">
       {{/if}}
     </div>
 
@@ -22,14 +21,14 @@ style="text-decoration: strikethrough:"
       <label> Title:</label>
       <p>{{limit list-item.title 15}}</p>
       <p class="other-label">Change Title:</p>
-      <input name="list-item[title]" type="text" placeholder="Title">
+      <input name="listItems[title]" type="text" placeholder="Title">
     </div>
 
     <div class="update-field update-location">
       <label>Description:</label>
       <p>{{errand.location}}</p>
       <p class="other-label">Change Description:</p>
-      <input name="list-item[description]" type="text" placeholder="Description">
+      <input name="listItems[description]" type="text" placeholder="Description">
     </div>
 
     <div class="update-list-item">

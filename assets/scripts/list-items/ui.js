@@ -1,5 +1,7 @@
 'use strict'
 
+const store = require('../store.js')
+const formatListItems = require('../templates/get-list-items.handlebars')
 
 const createListItemSuccess = (responseData) => {
   $('#user-message').text('You have successfully added to your Bucket List!')
@@ -8,98 +10,67 @@ const createListItemSuccess = (responseData) => {
   }, 2000)
 }
 
-
-
-const getItemsSuccess = function (responseData) {
-  const listItems = responseData.user.listItems
-  $('#display').html(' ')
-  for (let i = 0; i < (user.listItems).length; i++) {
-
-const userHtml = (`
-
-      <div class="col-sm-4 col-lg-3 box">
-    <p>
-          id: ID: ${user.listItems[i].id}
-          <br>
-          title: ${user.listItems[i].title}
-          <br>
-          description: ${user.listItems[i].description}
-          <br>
-
-     </p>
-
-    </div>
-    `)
-}
-
-const createItemFailure = () => {
+const createListItemFailure = () => {
   $('#user-message').text('Failed to create Bucket list Item! :( Please try again.')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
-  // $('form').trigger('reset')
+  $('form').trigger('reset')
 }
 
-
-const updateItemSuccess = function (responseData) {
-  $('#user-message').html('DAY UPDATED')
-  setTimeout(function () {
-    $('#user-message').text('')
-  }, 2000)
-
+const getListItemsSuccess = function (responseData) {
+  store.listItems = responseData.listItems
+  const formattedListItems = formatListItems({listItems: store.listItems})
+  $('#get-list-items').html(formattedListItems) // make sure it works, then try with .text
 }
 
-const deleteItemSuccess = function (responseData) {
-$('#user-message').html('ENTRY DELETED')
-  setTimeout(function () {
-    $('#user-message').text('')
-  }, 2000)
-}
-
-const failure = () => {
-
-  $('#user-message').text('something went wrong')
-
-  setTimeout(function () {
-    $('#user-message').text('')
-  }, 2000)
-// $('form').trigger('reset')
-}
-
-
-const deleteItemFailure = () => {
-  $('#user-message').text('Failed to delete Bucket list Item! :( Please try again.')
-  setTimeout(function () {
-    $('#user-message').text('')
-  }, 2000)
-// $('form').trigger('reset')
-}
-
-const updateItemFailure = () => {
-  $('#user-message').text('Failed to update Bucket list Item! :( Please try again.')
-  setTimeout(function () {
-    $('#user-message').text('')
-  }, 2000)
-  // $('form').trigger('reset')
-}
-
-const getItemsFailure = () => {
+const getListItemsFailure = () => {
   $('#user-message').text('Failed to get Bucket list Items! :( Please try again.')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
-  // $('form').trigger('reset')
+  $('form').trigger('reset')
 }
 
-$('.bucket-list-item').css('text-decoration', 'line-through')
+const updateListItemSuccess = function (responseData) {
+  $('#user-message').html('You have successfully updated your Bucket List')
+  $('form').trigger('reset')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
+}
+
+const updateListItemFailure = () => {
+  $('#user-message').text('Failed to update Bucket list Item! :( Please try again.')
+  $('form').trigger('reset')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
+}
+
+const deleteListItemSuccess = function () {
+  $('#user-message').html('ENTRY DELETED')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
+}
+
+const deleteListItemFailure = () => {
+  $('#user-message').text('Failed to delete Bucket list Item! :( Please try again.')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
+}
+
+// $('.bucket-list-item').css('text-decoration', 'line-through')
 
 module.exports = {
-createItemSuccess,
-getItemsSuccess,
-updateItemSuccess,
-deleteItemSuccess,
-createItemFailure,
-getItemsFailure,
-updateItemFailure,
-deleteItemFailure
+  createListItemSuccess,
+  getListItemsSuccess,
+  updateListItemSuccess,
+  deleteListItemSuccess,
+  createListItemFailure,
+  getListItemsFailure,
+  updateListItemFailure,
+  deleteListItemFailure
 }
