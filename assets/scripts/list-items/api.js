@@ -1,28 +1,25 @@
 'use strict'
 
-const authEvents = require('./events.js')
-const authApi = require('./api.js')
-const authUi = require('./ui.js')
 const config = require('../config.js')
 const store = require('../store.js')
 
 const createListItem = function (formData) {
   return $.ajax({
-      url: config.apiUrl + '/list-items',
-      method: 'POST',
-      headers: {
+    url: config.apiUrl + '/list-items',
+    method: 'POST',
+    headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: formData
-    })
+  })
 }
 
-const onGetItems = function () {
+const getListItems = function () {
   return $.ajax({
     url: config.apiUrl + '/list-items',
     method: 'GET',
     headers: {
-    Authorization: 'Token token=' + store.user.token
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
@@ -37,33 +34,31 @@ const onGetItems = function () {
 //     })
 // }
 
-const onDeleteItem= function (id) {
+const deleteListItem = function (id) {
   return $.ajax({
     url: config.apiUrl + '/list-items/' + `${id}`,
     method: 'DELETE',
     headers: {
-    Authorization: 'Token token=' + store.user.token
-  }
+      Authorization: 'Token token=' + store.user.token
+    }
 
   })
 }
 
-const onUpdateItem = function (formData) {
+const updateListItem = function (id, formData) {
   return $.ajax({
-      url: config.apiUrl + `/list-items/${formData.id}`,
-      method: 'PATCH',
-      headers: {
+    url: config.apiUrl + `/list-items/${id}`,
+    method: 'PATCH',
+    headers: {
       Authorization: 'Token token=' + store.user.token
     },
-      data: formData
+    data: formData
   })
-}
 }
 
 module.exports = {
-    createItem,
-    onGetItems,
-    // onGetItem,
-    onUpdateItem,
-    onDeleteItem
+  createListItem,
+  getListItems,
+  updateListItem,
+  deleteListItem
 }
