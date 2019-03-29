@@ -1,4 +1,4 @@
-('use strict')
+'use strict'
 
 const authEvents = require('./events.js')
 const authApi = require('./api.js')
@@ -27,15 +27,15 @@ const onGetItems = function () {
   })
 }
 
-const onGetItem = function (id) {
-  return $.ajax({
-      url: config.apiUrl + '/list-items/' + `${id}`,
-      method: 'GET',
-      headers: {
-      Authorization: 'Token token=' + store.user.token
-      }
-    })
-}
+// const onGetItem = function (id) {
+//   return $.ajax({
+//       url: config.apiUrl + '/list-items/' + `${id}`,
+//       method: 'GET',
+//       headers: {
+//       Authorization: 'Token token=' + store.user.token
+//       }
+//     })
+// }
 
 const onDeleteItem= function (id) {
   return $.ajax({
@@ -63,7 +63,7 @@ const onUpdateItem = function (formData) {
 module.exports = {
     onCreateItem,
     onGetItems,
-    onGetItem,
+    // onGetItem,
     onUpdateItem,
     onDeleteItem
 }

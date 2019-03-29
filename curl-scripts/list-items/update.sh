@@ -4,10 +4,10 @@ curl "http://localhost:4741/list-items/${ID}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "list-item": {
+    "listItem": {
       "title": "'"${TITLE}"'",
       "description": "'"${DESCRIPTION}"'",
-      "boolean": "'"${BOOL}"'"
+      "boolean": "'"${BOOLEAN}"'"
     }
   }'
 
