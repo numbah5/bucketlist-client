@@ -1,10 +1,10 @@
 'use strict'
 
-const getFormFields = require('../../lib/get-form-fields.js')
-const config = require('../config.js')
+const getFormFields = require('../../../lib/get-form-fields.js')
+// const config = require('../config.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const store = require('../store.js')
+// const store = require('../store.js')
 
 const onSignUp = (event) => {
   event.preventDefault()
@@ -26,7 +26,7 @@ const onSignIn = (event) => {
 
 const onChangePassword = (event) => {
   event.preventDefault()
-  const form = event.target
+  api.changePassword()
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
   $('#change-password-form').trigger('reset')
@@ -43,8 +43,8 @@ const onSignOut = (event) => {
 }
 
 module.exports = {
-onSignUp,
-onSignIn,
-onChangePassword,
-onSignOut
+  onSignUp,
+  onSignIn,
+  onChangePassword,
+  onSignOut
 }
