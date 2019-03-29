@@ -8,28 +8,30 @@ const ui = require('./ui.js')
 
 const onSignUp = (event) => {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+
+  const formData = getFormFields(event.target)
   api.signUp(formData)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
-  $('#form').trigger('reset')
+  // $('#inputEmailSignIn').trigger('reset')
 }
 
 const onSignIn = (event) => {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+
+  const formData = getFormFields(event.target)
   api.signIn(formData)
+    .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
 
 const onChangePassword = (event) => {
   event.preventDefault()
-  api.changePassword()
+  const formData = getFormFields(event.target)
+  api.changePassword(formData)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
-  $('#change-password-form').trigger('reset')
+  $('#btn-change-password').trigger('reset')
 }
 
 const onSignOut = (event) => {
