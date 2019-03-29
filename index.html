@@ -12,13 +12,14 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <section id="authentication-page">
+      <section class="authentication-page" id="authentication-page">
+        <p style="font-size: 60px; text-align: center;">Bucket List</p>
         <div id="sign-in" class="container">
           <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
               <div class="card card-signin my-5">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Sign In</h5>
+                  <h5 class="card-title text-center" style="font-size: 30px;">Sign In</h5>
                   <form class="form-signin">
                     <div class="form-label-group">
                       <input type="email" id="inputEmailSignIn" class="form-control" placeholder="Email address" required autofocus>
@@ -29,7 +30,7 @@
                       <label for="inputPasswordSignIn">Password</label>
                     </div>
                     <button id="sign-in-button" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-                    <button id="go-to-sign-up-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
+                    <button id="go-to-sign-up-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Not Signed Up?</button>
                     <hr class="my-4">
                   </form>
                 </div>
@@ -39,10 +40,10 @@
         </div>
         <div id="sign-up" class="container">
           <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -38px;">
               <div class="card card-signin my-5">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Sign Up</h5>
+                  <h5 class="card-title text-center" style="font-size: 30px;">Sign Up</h5>
                   <form class="form-signin">
                     <div class="form-label-group">
                       <input name="credentials[first-name]" type="text" id="inputFirstName" class="form-control" placeholder="First Name" required autofocus>
@@ -65,7 +66,7 @@
                       <label for="inputConfirmPassword">Confirm Password</label>
                     </div>
                     <button id="sign-up-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
-                    <button id="go-to-sign-in-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                    <button id="go-to-sign-in-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in Page</button>
                     <hr class="my-4">
                   </form>
                 </div>
@@ -77,22 +78,35 @@
 
       <section class="bucket-list-page" id="bucket-list-page">
         <nav class="hidden">
-          <form id="sign-out">
-           <button type="submit" value="Sign Out">Sign Out</button>
-          </form>
-          <button type="button" id="change-password" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal" data-whatever="@fat" style="margin: 7px; WIDTH: 180px; background-color: rgba(61, 40, 40, 0.6); border: none;">CHANGE
-      PASSWORD</button>
+          <button type="button" id="sign-out-button" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal" data-whatever="@fat" style="margin-left: 20px;">Sign Out</button>
+          <button type="button" id="account-button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal" data-whatever="@fat">Account</button>
 
         </nav>
         <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content" style="margin-top: 50px; background-color: rgba(61, 40, 40, 0.8)">
+    <div id="account-modal" class="modal-dialog" role="document">
+      <div class="modal-content" style="margin-top: 50px; background-color: #222; height: 96vh; margin-top: -27px;">
         <div class="modal-header" style="color: white;">
-          <h3 class="modal-title" id="exampleModalLabel">CHANGE PASSWORD</h3>
-          <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+          <h1 class="modal-title modal-dialog" id="exampleModalLabel">Account</h1>
+          <div id="changePasswordModalMessages" class="modal-messages" style="font-weight: 700; font-size: 26px; color: red;"></div>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="font-size: 30px; color: white;">&times;</span>
           </button>
+        </div>
+        <div class="modal-dialog" style="color: white; margin: .65rem; padding-top: 30px">
+          <h5 class="modal-title" id="exampleModalLabel">#First#</h5>
+          <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+        </div>
+        <div class="modal-dialog" style="color: white; margin: .65rem;">
+          <h5 class="modal-title" id="exampleModalLabel">#Last#</h5>
+          <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+        </div>
+        <div class="modal-dialog" style="color: white; margin: .65rem;">
+          <h5 class="modal-title" id="exampleModalLabel">#Email#</h5>
+          <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+        </div>
+        <div class="modal-header" style="color: white; padding-top: 120px;">
+          <h4 class="modal-title" id="exampleModalLabel">CHANGE PASSWORD</h4>
+          <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
         </div>
         <div class="modal-body">
           <form id="btn-change-password">
@@ -108,7 +122,7 @@
                 <input name="passwords[new]" type="password" class="form-control" id="inputConfirmPasswordChangePassword" style="width: 260px;">
               </div>
             </div>
-            <button type="submit" class="btn btn-primary" style="background-color: rgba(61, 40, 40, 0.6); border-color: white;  position: relative; left: 280px;">CHANGE PASSWORD</button>
+            <button type="submit" class="btn btn-primary" style="background-color: blue; border-color: white;  position: relative; left: 280px;">CHANGE PASSWORD</button>
           </form>
         </div>
       </div>
@@ -116,7 +130,7 @@
   </div>
         <main class="list-items">
           <h3>Add List Items</h3>
-          <form id="create-list-items">
+          <form id="create-list-items" style="display: flex; align-items: center; border-radius: 7px;">
             <div>
               <label>Done?</label>
               <input name="list-items[boolean]" type="checkbox" value="false">
@@ -127,12 +141,13 @@
             </div>
             <div>
               <label>Description:</label>
-              <input name="list-items[description]" type="text" placeholder="Description" required=true>
+              <input name="list-items[description]" type="text" placeholder="Description" required=true style="width: 500px;">
             </div>
-            <button type="submit" value="Create List Item">Add</button>
+            <button id="add-button" type="submit" value="Create List Item" style="border-radius: 7px; background-color: maroon; color: white;">Add</button>
           </form>
           <h3>My Bucket List</h3>
           <div id="get-list-items"></div>
+          <p class="bucket-list-item">HEY I'M A MAKE BELIEVE LITTLE BUCKET LIST THINGY GOAL BUT NOT A GOAL SO NOT SURE WHAT I REALLY AM</p>
         </main>
       </section>
     </body>
