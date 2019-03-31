@@ -1,10 +1,10 @@
-{{#each errands as |errand|}}
-style="text-decoration: strikethrough:"
+{{#each listItems as |listItem|}}
 
-  <form class="list-item" data-id="{{list-item.id}}">
+
+  <form class="list-item" data-id="{{listItem._id}}" data-owner="{{listItem.owner}}">
 
     <div class="update-field update-list-item">
-      {{#if list-item.boolean}}
+      {{#if listItem.boolean}}
       <label>Done?</label>
       <p> Yes!</p>
       <p class="other-label">Change Done Status</p>
@@ -18,15 +18,17 @@ style="text-decoration: strikethrough:"
     </div>
 
     <div class="update-field update-list-item">
-      <label> Title:</label>
-      <p>{{limit list-item.title 15}}</p>
+      <label>{{listItem.owner}}
+        +++++++++++++++++++++++
+        {{listItem._id}}</label>
+      <p>{{limit listItem.title 15}}</p>
       <p class="other-label">Change Title:</p>
       <input name="listItems[title]" type="text" placeholder="Title">
     </div>
 
     <div class="update-field update-location">
       <label>Description:</label>
-      <p>{{errand.location}}</p>
+      <p>{{listItem.description}}</p>
       <p class="other-label">Change Description:</p>
       <input name="listItems[description]" type="text" placeholder="Description">
     </div>
@@ -35,7 +37,7 @@ style="text-decoration: strikethrough:"
       <button type="submit" value="Update List Item">Update</button>
     </div>
     <div class="delete-list-item">
-      <button type="reset" value="Delete List Item">Delete</button>
+      <button id="delete-button-{{listItem._id}}" data-owner="{{listItem.owner}}" class="delete-button" type="button" data-id="{{listItem._id}}">Delete</button>
     </div>
 
   </form>

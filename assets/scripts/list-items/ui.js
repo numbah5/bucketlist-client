@@ -20,8 +20,11 @@ const createListItemFailure = () => {
 
 const getListItemsSuccess = function (responseData) {
   store.listItems = responseData.listItems
+  console.log(store.user._id)
+  console.log(store.listItems.owner)
   const formattedListItems = formatListItems({listItems: store.listItems})
-  $('#get-list-items').html(formattedListItems) // make sure it works, then try with .text
+  $('#get-list-items').html(formattedListItems)
+  $('form').trigger('reset')
 }
 
 const getListItemsFailure = () => {

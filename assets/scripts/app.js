@@ -6,10 +6,13 @@ const listItemsEvents = require('./list-items/events.js')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const hideOwnership = () => { $('.list-item').hide() }
 
 $(() => {
   // authEvents.addHandlers()
   listItemsEvents.addHandlers()
+  // $('.owned').hide()
+  hideOwnership()
   $('#form-sign-up').on('submit', authEvents.onSignUp)
   $('#form-sign-in').on('submit', authEvents.onSignIn)
   $('#sign-up').hide()
@@ -23,4 +26,7 @@ $(() => {
     $('#sign-in').show()
   })
   $('#btn-change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out-button').on('click', authEvents.onSignOut)
+  $('#form-create-list-items').on('submit', listItemsEvents.onCreateListItem)
+  $('#get-list-items').on('click', '.delete-button', listItemsEvents.onDeleteListItem)
 })

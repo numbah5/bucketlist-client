@@ -2,33 +2,36 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store.js')
 
 const onCreateListItem = (event) => {
   event.preventDefault()
 
-  const form = (event.target)
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
+  console.log(formData)
 
-  api.createListItems(formData)
+  api.createListItem(formData)
     .then(ui.createListItemSuccess)
+    .then(onGetListItems())
     .catch(ui.createListItemFailure)
   // $('#create-list-item-button').trigger('reset')
 }
 
 const onGetListItems = function () {
-  event.preventDefault()
-
+  console.log(store)
+  // event.preventDefault()
   api.getListItems()
     .then(ui.getListItemsSuccess)
     .catch(ui.getListItemsFailure)
 }
 
 const onDeleteListItem = function (event) {
+  const listItemId = $(event.target).data('id')
+  const owner = $(event.target).data('owner')
+  console.log(store.user._id)
+  console.log(owner)
   event.preventDefault()
-
-  const formData = getFormFields(event.target)
-
-  api.deleteItem(formData.listItem.id, formData)
+  api.deleteListItem(listItemId)
     .then(ui.deleteListItemSuccess) // this
     .catch(ui.deleteListItemFailure)
   // $('#<delete-item-form>').trigger('reset')
