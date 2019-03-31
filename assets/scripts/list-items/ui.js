@@ -3,8 +3,11 @@
 const store = require('../store.js')
 const formatListItems = require('../templates/get-list-items.handlebars')
 
+const hideOwnership = () => { $('.list-item').hide() }
+
 const createListItemSuccess = (responseData) => {
   $('#user-message').text('You have successfully added to your Bucket List!')
+  hideOwnership()
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
@@ -20,8 +23,8 @@ const createListItemFailure = () => {
 
 const getListItemsSuccess = function (responseData) {
   store.listItems = responseData.listItems
-  console.log(store.user._id)
-  console.log(store.listItems.owner)
+  // console.log(store.user._id)
+  // console.log(store.listItems.owner)
   const formattedListItems = formatListItems({listItems: store.listItems})
   $('#get-list-items').html(formattedListItems)
   $('form').trigger('reset')

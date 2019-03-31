@@ -3,14 +3,14 @@
 const store = require('../store.js')
 // const app = require('../app.js')
 
-const hideOwnership = () => { $('.list-item').hide() }
-
 const showOwnership = () => {
   $('.list-item').each(index => {
     const ownedElement = $($('.list-item')[index])
-    if (store.user._id === ownedElement.data('list-item')) { ownedElement.show() }
+    if (store.user._id === ownedElement.data('owner')) { ownedElement.show() }
   })
 }
+
+const hideOwnership = () => { $('.list-item').hide() }
 
 const signUpSuccess = () => {
   // $('#inputEmailSignIn').on('click')
@@ -28,7 +28,7 @@ const signInSuccess = (responseData) => {
   $('#bucket-list-page').show()
   $('#user-message').text('successfully signed In!')
   store.user = responseData.user
-  console.log('store is', store)
+  console.log(store)
   showOwnership()
   setTimeout(function () {
     $('#user-message').text('')
