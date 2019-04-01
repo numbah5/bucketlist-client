@@ -10,7 +10,7 @@ const signUpSuccess = () => {
   $('#form-sign-up').trigger('reset')
   $('#sign-up-button').text('Sign up Successful!')
   setTimeout(function () {
-    $('#sign-up-button').text('')
+    $('#sign-up-button').text('Sign up')
   }, 2000)
 
   // $('form').trigger('reset')
