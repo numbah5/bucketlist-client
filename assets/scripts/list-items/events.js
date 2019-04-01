@@ -55,7 +55,7 @@ const onUpdateListItem = function (event) {
 
   api.updateListItem(listItemId, formData)
     .then(ui.updateListItemSuccess)
-    .then(onGetListItems())
+    .then(onGetListItems)
     .catch(ui.updateListItemFailure)
 }
 
