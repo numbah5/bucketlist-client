@@ -1,11 +1,9 @@
 'use strict'
 
 const getFormFields = require('../../../lib/get-form-fields.js')
-// const config = require('../config.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 const events = require('../list-items/events')
-// const store = require('../store.js')
 
 const onSignUp = (event) => {
   event.preventDefault()
@@ -14,19 +12,14 @@ const onSignUp = (event) => {
   api.signUp(formData)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
-  // $('#inputEmailSignIn').trigger('reset')
 }
 
 const onSignIn = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
   api.signIn(formData)
     .then(ui.signInSuccess)
     .then(events.onGetListItems)
-    // .then(showOwnership())
-    // hideOwnership() maybe in a prosime
-    // showOwnership()
     .catch(ui.signInFailure)
 }
 
