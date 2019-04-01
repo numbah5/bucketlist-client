@@ -10,7 +10,7 @@ const signUpSuccess = () => {
   $('#form-sign-up').trigger('reset')
   $('#sign-up-button').text('Sign up Successful!')
   setTimeout(function () {
-    $('#sign-up-button').text('')
+    $('#sign-up-button').text('Sign up')
   }, 2000)
 
   // $('form').trigger('reset')
@@ -54,7 +54,7 @@ const signOutSuccess = (responseData) => {
 const signUpFailure = () => {
   $('#sign-up-button').text('Sign Up Failed')
   setTimeout(function () {
-    $('sign-up-button').text('Sign Up')
+    $('#sign-up-button').text('Sign Up')
   }, 1000)
   $('#form-sign-up').trigger('reset')
 }
