@@ -8,10 +8,11 @@ const hideOwnership = () => { $('.list-item').hide() }
 const signUpSuccess = () => {
   // $('#inputEmailSignIn').on('click')
   $('#form-sign-up').trigger('reset')
-  $('#user-message').text('successfully signed up!')
+  $('#sign-up-button').text('Sign up Successful!')
   setTimeout(function () {
-    $('#user-message').text('')
+    $('#sign-up-button').text('')
   }, 2000)
+
   // $('form').trigger('reset')
 }
 
@@ -43,7 +44,7 @@ const signOutSuccess = (responseData) => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
-  $('get-list-items').html('')
+  $('#get-list-items').html('')
   $('#sign-up').hide()
   $('#bucket-list-page').hide()
   $('#authentication-page').show()
@@ -51,18 +52,18 @@ const signOutSuccess = (responseData) => {
 }
 
 const signUpFailure = () => {
-  $('#user-message').text('error on sign up')
+  $('#sign-up-button').text('Sign Up Failed')
   setTimeout(function () {
-    $('#user-message').text('')
-  }, 2000)
+    $('sign-up-button').text('Sign Up')
+  }, 1000)
   $('#form-sign-up').trigger('reset')
 }
 
 const signInFailure = () => {
-  $('#user-message').text('error on sign in')
+  $('#sign-in-button').text('Sign in Failed')
   setTimeout(function () {
-    $('#user-message').text('')
-  }, 2000)
+    $('#sign-in-button').text('Sign In')
+  }, 1000)
   $('#form-sign-in').trigger('reset')
 }
 
