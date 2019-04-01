@@ -81,15 +81,15 @@
 
     <div class="container list-item" id="all{{listItem._id}}"data-id="{{listItem._id}}" data-owner="{{listItem.owner}}">
       <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto" style="margin-top: -20px;">
           <div class="card card-signin my-5">
             <div class="card-body">
-              <h4 class="card-title text-center list-title" data-bool="{{listItem.boolean}}" id="{{listItem._id}}" src="1" data-owner="{{listItem.owner}}" style="font-size: 30px;">{{listItem.title}}</h4>
-              <h6 class="card-title text-center list-description" id="a{{listItem._id}}" data-owner="{{listItem.owner}}" style="font-size: 22px;">{{listItem.description}}</h6>
-              <hr class="my-4">
-              <h6 class="card-title text-center" style="font-size: 18px;">Update Bucket List Item</h6>
+              <h4 class="card-title text-center list-title" data-id="{{listItem._id}}"data-bool="{{listItem.boolean}}" id="title{{listItem._id}}" src="1" data-owner="{{listItem.owner}}" style="font-size: 30px;">{{listItem.title}}</h4>
+              <h6 class="card-title text-center list-description" id="description{{listItem._id}}" data-owner="{{listItem.owner}}" style="font-size: 22px;">{{listItem.description}}</h6>
 
               <form id="{{listItem._id}}" class="form-update">
+                <hr class="my-4">
+                <h6 class="card-title text-center" style="font-size: 18px;">Update Bucket List Item</h6>
                 <div class="form-label-group">
                   <input type="radio" id="inputB{{listItem._id}}" name="listItem[boolean]" value="true" class="form-control radio"/><span>complete</span><br>
                   <input type="radio" id="inputA{{listItem._id}}" name="listItem[boolean]" value="false" class="form-control radio"/><span>not complete</span><br>
@@ -101,7 +101,7 @@
                   <label for="inputT{{listItem._id}}">New Title</label>
                 </div>
                 <div class="form-label-group">
-                  <input type="text" name="listItem[description]" id="inputP{{listItem._id}}" class="form-control" placeholder="Password" required>
+                  <input type="text" name="listItem[description]" id="inputP{{listItem._id}}" class="form-control" placeholder="Password">
                   <label for="inputP{{listItem._id}}">New Description</label>
                 </div>
                 <button data-owner="{{listItem.owner}}" class="delete-button btn btn-md btn-primary" type="button" data-id="{{listItem._id}}">Delete</button>

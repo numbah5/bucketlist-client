@@ -76,6 +76,13 @@ const onMarkAsComplete = (event) => {
   }
 }
 
+const showUpdateForm = function (event) {
+  const listItemId = $(event.target).data('id')
+  $('#' + listItemId).toggle()
+  // console.log(store.listItems[0])
+  // $('#all'show()
+}
+
 const addHandlers = function () {
   $('#create-list-item-button').on('click', onCreateListItem)
 }
@@ -86,5 +93,6 @@ module.exports = {
   onDeleteListItem,
   onGetListItems,
   onCreateListItem,
-  onMarkAsComplete
+  onMarkAsComplete,
+  showUpdateForm
 }
