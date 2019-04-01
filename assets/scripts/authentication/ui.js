@@ -3,13 +3,6 @@
 const store = require('../store.js')
 // const app = require('../app.js')
 
-const showOwnership = () => {
-  $('.list-item').each(index => {
-    const ownedElement = $($('.list-item')[index])
-    if (store.user._id === ownedElement.data('owner')) { ownedElement.show() }
-  })
-}
-
 const hideOwnership = () => { $('.list-item').hide() }
 
 const signUpSuccess = () => {
@@ -29,7 +22,6 @@ const signInSuccess = (responseData) => {
   $('#user-message').text('successfully signed In!')
   store.user = responseData.user
   console.log(store)
-  showOwnership()
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
@@ -46,7 +38,7 @@ const changePasswordSuccess = (responseData) => {
 
 const signOutSuccess = (responseData) => {
   $('#user-message').text('successfully signed Out!')
-  $('form').trigger('reset')
+  $('.list-item').trigger('reset')
   store.user = null
   setTimeout(function () {
     $('#user-message').text('')
