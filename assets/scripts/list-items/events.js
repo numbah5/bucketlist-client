@@ -12,7 +12,7 @@ const onCreateListItem = (event) => {
 
   api.createListItem(formData)
     .then(ui.createListItemSuccess)
-    .then(onGetListItems())
+    .then(() => { onGetListItems() })
     .catch(ui.createListItemFailure)
 }
 
