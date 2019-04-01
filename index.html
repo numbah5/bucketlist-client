@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Bucket List</title>
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +13,152 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-    </body>
+      <div id="user-message"></div>
+
+      <section class="authentication-page" id="authentication-page">
+        <p style="font-size: 60px; text-align: center;">Bucket List</p>
+        <div id="sign-in" class="container">
+          <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
+              <div class="card card-signin my-5">
+                <div class="card-body">
+                  <h5 class="card-title text-center" style="font-size: 30px;">Sign In</h5>
+                  <form id="form-sign-in">
+                    <div class="form-label-group">
+                      <input type="email" name="credentials[email]" id="inputEmailSignIn" class="form-control" placeholder="Email address" />
+                      <label for="inputEmailSignIn">Email address</label>
+                    </div>
+                    <div class="form-label-group">
+                      <input type="password" name="credentials[password]" id="inputPasswordSignIn" class="form-control" placeholder="Password" required>
+                      <label for="inputPasswordSignIn">Password</label>
+                    </div>
+                    <button id="sign-in-button" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                    <button id="go-to-sign-up-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="button">Not Signed Up?</button>
+                    <hr class="my-4">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sign-up" class="container">
+          <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -38px;">
+              <div class="card card-signin my-5">
+                <div class="card-body">
+                  <h5 class="card-title text-center" style="font-size: 30px;">Sign Up</h5>
+                  <form class="form-sign-up" id="form-sign-up">
+                    <div class="form-label-group">
+                      <input name="credentials[firstName]" type="text" id="inputFirstName" class="form-control" placeholder="First Name" required autofocus>
+                      <label for="inputFirstName">First Name</label>
+                    </div>
+                    <div class="form-label-group">
+                      <input name="credentials[lastName]" type="text" id="inputLastName" class="form-control" placeholder="Last Name" required autofocus>
+                      <label for="inputLastName">Last Name</label>
+                    </div>
+                    <div class="form-label-group">
+                      <input type="email" id="inputEmail" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
+                      <label for="inputEmail">Email address</label>
+                    </div>
+                    <div class="form-label-group">
+                      <input type="password" id="inputPassword" name="credentials[password]" class="form-control" placeholder="Password" required autofocus>
+                      <label for="inputPassword">Password</label>
+                    </div>
+                    <div class="form-label-group">
+                      <input type="password" id="inputConfirmPassword" name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password" required>
+                      <label for="inputConfirmPassword">Confirm Password</label>
+                    </div>
+                    <button id="sign-up-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
+                    <button id="go-to-sign-in-button"class="btn btn-lg btn-primary btn-block text-uppercase" type="button">Go to Sign In</button>
+                    <hr class="my-4">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bucket-list-page" id="bucket-list-page">
+        <nav class="hidden">
+          <button type="button" id="sign-out-button" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal" data-whatever="@fat" style="margin-left: 20px;">Sign Out</button>
+          <button type="button" id="account-button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal" data-whatever="@fat">Account</button>
+
+        </nav>
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div id="account-modal" class="modal-dialog" role="document">
+          <div class="modal-content" style="margin-top: 50px; background-color: #222; height: 96vh; margin-top: -27px;">
+            <div class="modal-header" style="color: white;">
+              <h1 class="modal-title modal-dialog" id="exampleModalLabel">Account</h1>
+              <div id="changePasswordModalMessages" class="modal-messages" style="font-weight: 700; font-size: 26px; color: red;"></div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="font-size: 30px; color: white;">&times;</span>
+              </button>
+            </div>
+            <div class="modal-dialog" style="color: white; margin: .65rem; padding-top: 30px">
+              <h5 class="modal-title" id="full-name"></h5>
+              <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+            </div>
+            <div class="modal-dialog" style="color: white; margin: .65rem;">
+              <h5 class="modal-title" id="email"></h5>
+              <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+            </div>
+            <div class="modal-header" style="color: white; padding-top: 120px;">
+              <h4 class="modal-title" id="exampleModalLabel">CHANGE PASSWORD</h4>
+              <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+            </div>
+            <div class="modal-body">
+              <form id="btn-change-password">
+                <div class="form-group row">
+                  <label for="inputPassword" class="col-sm-5 col-form-label" style="color: white; font-size: 20px">Old Password</label>
+                  <div class="col-sm-7">
+                    <input name="passwords[old]" type="password" class="form-control" id="inputPasswordChangePassword" style="width: 260px;">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword" class="col-sm-5 col-form-label" style="color: white; font-size: 20px">New Password</label>
+                  <div class="col-sm-7">
+                    <input name="passwords[new]" type="password" class="form-control" id="inputConfirmPasswordChangePassword" style="width: 260px;">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="background-color: blue; border-color: white;  position: relative; left: 280px;">CHANGE PASSWORD</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="list-items">
+        <p style="font-size: 60px; text-align: center;">Bucket List</p>
+        <div id="sign" class="container">
+          <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
+              <div class="card card-signin my-5">
+                <div class="card-body">
+                  <h5 class="card-title text-center" style="font-size: 30px;">Create New Bucket List Event</h5>
+                  <form id="form-create-list-items">
+                    <!-- <div class="form-label-group">
+                      <input type="checkbox" name="listItem[title]" id="inputBoolean" value="false" class="form-control" placeholder="complete" />
+                      <label for="inputBoolean">complete</label>
+                    </div> -->
+                    <div class="form-label-group">
+                      <input type="text" name="listItem[title]" id="inputEmailSignIx" class="form-control" placeholder="Email address" />
+                      <label for="inputEmailSignIx">Title</label>
+                    </div>
+                    <div class="form-label-group">
+                      <input type="text" name="listItem[description]" id="inputPasswordSignIx" class="form-control" placeholder="Password" required>
+                      <label for="inputPasswordSignIx">Description</label>
+                    </div>
+                    <button id="sign-in-butto" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Add</button>
+                    <hr class="my-4">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>My Bucket List</h3>
+        <div id="get-list-items"></div>
+      </main>
+    </section>
+  </body>
 </html>
