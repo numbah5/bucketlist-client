@@ -20,6 +20,7 @@ const onSignUp = (event) => {
 const onSignIn = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
+  console.log(formData)
   api.signIn(formData)
     .then(ui.signInSuccess)
     .then(events.onGetListItems)
