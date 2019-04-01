@@ -3,6 +3,7 @@ This is the client repository for the web app -- Bucket List.
 
 ## Directory
 Backend Repo: https://github.com/numbah5/bucketlist-api
+Deployed heroku: https://bucketlist-app-api.herokuapp.com/
 Deployed app: [https://numbah5.github.io/bucketlist-client/]
 
 ## How it works
