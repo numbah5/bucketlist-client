@@ -1,5 +1,5 @@
 # Bucket List Client
-This is the client reposiotory for the web app -- Bucket List.
+This is the client repository for the web app -- Bucket List.
 
 ## Directory
 Backend Repo: https://github.com/numbah5/bucketlist-api
