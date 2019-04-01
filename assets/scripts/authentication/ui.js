@@ -1,17 +1,19 @@
 'use strict'
 
 const store = require('../store.js')
+// const app = require('../app.js')
 
-const hideOwnership = () => {
-  $('.list-item').hide()
-}
+const hideOwnership = () => { $('.list-item').hide() }
 
 const signUpSuccess = () => {
+  // $('#inputEmailSignIn').on('click')
   $('#form-sign-up').trigger('reset')
   $('#sign-up-button').text('Sign up Successful!')
   setTimeout(function () {
     $('#sign-up-button').text('Sign up')
   }, 2000)
+
+  // $('form').trigger('reset')
 }
 
 const signInSuccess = (responseData) => {
@@ -20,6 +22,7 @@ const signInSuccess = (responseData) => {
   $('#bucket-list-page').show()
   $('#user-message').text('successfully signed In!')
   store.user = responseData.user
+  console.log(store)
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
@@ -27,6 +30,7 @@ const signInSuccess = (responseData) => {
 
 const changePasswordSuccess = (responseData) => {
   $('form').trigger('reset')
+  // need to create ID in HTML for this listener
   $('#user-message').text('successfully changed password!')
   setTimeout(function () {
     $('#user-message').text('')
@@ -41,6 +45,7 @@ const signOutSuccess = (responseData) => {
     $('#user-message').text('')
   }, 2000)
   $('#get-list-items').html('')
+  $('#sign-in').show()
   $('#sign-up').hide()
   $('#bucket-list-page').hide()
   $('#authentication-page').show()
@@ -76,6 +81,7 @@ const failure = () => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
+  // $('form').trigger('reset')
 }
 
 const signOutFailure = () => {
