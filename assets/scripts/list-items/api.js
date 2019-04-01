@@ -24,16 +24,6 @@ const getListItems = function () {
   })
 }
 
-// const onGetItem = function (id) {
-//   return $.ajax({
-//       url: config.apiUrl + '/list-items/' + `${id}`,
-//       method: 'GET',
-//       headers: {
-//       Authorization: 'Token token=' + store.user.token
-//       }
-//     })
-// }
-
 const deleteListItem = function (id) {
   return $.ajax({
     url: config.apiUrl + '/list-items/' + `${id}`,

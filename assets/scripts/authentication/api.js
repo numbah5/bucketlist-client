@@ -1,8 +1,5 @@
 'use strict'
 
-// const authEvents = require('./events.js')
-// const authApi = require('./api.js')
-// const authUi = require('./ui.js')
 const config = require('../config.js')
 const store = require('../store.js')
 

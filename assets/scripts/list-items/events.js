@@ -2,13 +2,11 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const store = require('../store.js')
 
 const onCreateListItem = (event) => {
   event.preventDefault()
 
   const formData = getFormFields(event.target)
-  console.log(formData)
 
   api.createListItem(formData)
     .then(ui.createListItemSuccess)
@@ -17,8 +15,6 @@ const onCreateListItem = (event) => {
 }
 
 const onGetListItems = function () {
-  console.log(store)
-  // event.preventDefault()
   api.getListItems()
     .then(ui.getListItemsSuccess)
     .catch(ui.getListItemsFailure)
@@ -32,25 +28,13 @@ const onDeleteListItem = function (event) {
     .then(ui.deleteListItemSuccess)
     .catch(ui.deleteListItemFailure)
 }
-// const onCreateListItem = (event) => {
-//   event.preventDefault()
-//
-//   const formData = getFormFields(event.target)
-//   console.log(formData)
-//
-//   api.createListItem(formData)
-//     .then(ui.createListItemSuccess)
-//     .then(onGetListItems())
-//     .catch(ui.createListItemFailure)
-// }
+
 const onUpdateListItem = function (event) {
   event.preventDefault()
 
   const listItemId = event.target.id
-  console.log(event.target.id)
 
   const formData = getFormFields(event.target)
-  console.log(formData)
   $('#all' + listItemId).hide()
 
   api.updateListItem(listItemId, formData)
@@ -62,9 +46,6 @@ const onUpdateListItem = function (event) {
 const onMarkAsComplete = (event) => {
   event.preventDefault()
   const currentItem = event.target.id
-  console.log(currentItem)
-  console.log($('#' + currentItem).html())
-  console.log($('#currentItem'))
   if ($(event.target).attr('src') === '1') {
     $('#' + currentItem).css('text-decoration', 'line-through')
     $('#a' + currentItem).css('text-decoration', 'line-through')
@@ -79,8 +60,6 @@ const onMarkAsComplete = (event) => {
 const showUpdateForm = function (event) {
   const listItemId = $(event.target).data('id')
   $('#' + listItemId).toggle()
-  // console.log(store.listItems[0])
-  // $('#all'show()
 }
 
 const addHandlers = function () {
