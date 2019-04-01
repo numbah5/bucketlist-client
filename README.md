@@ -3,7 +3,7 @@ This is the client reposiotory for the web app -- Bucket List.
 
 ## Directory
 Backend Repo: https://github.com/numbah5/bucketlist-api
-Deployed app:
+Deployed app: [ add link ]
 
 ## How it works
 As a user, one can create, read, update and delete bucketlist items. This tool is
