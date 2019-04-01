@@ -7,6 +7,7 @@ const hideOwnership = () => { $('.list-item').hide() }
 
 const signUpSuccess = () => {
   // $('#inputEmailSignIn').on('click')
+  $('form').trigger('reset')
   $('#form-sign-up').trigger('reset')
   $('#sign-up-button').text('Sign up Successful!')
   setTimeout(function () {
@@ -17,6 +18,7 @@ const signUpSuccess = () => {
 }
 
 const signInSuccess = (responseData) => {
+  $('form').trigger('reset')
   $('#form-sign-in').trigger('reset')
   $('#authentication-page').hide()
   $('#bucket-list-page').show()
@@ -31,12 +33,14 @@ const changePasswordSuccess = (responseData) => {
   $('form').trigger('reset')
   // need to create ID in HTML for this listener
   $('#user-message').text('successfully changed password!')
+  $('#changePasswordModal').modal('hide')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
 }
 
 const signOutSuccess = (responseData) => {
+  $('form').trigger('reset')
   $('#user-message').text('successfully signed Out!')
   $('.list-item').trigger('reset')
   store.user = null
@@ -65,6 +69,7 @@ const signInFailure = () => {
     $('#sign-in-button').text('Sign In')
   }, 1000)
   $('#form-sign-in').trigger('reset')
+  $('form').trigger('reset')
 }
 
 const changePasswordFailure = () => {
@@ -73,6 +78,7 @@ const changePasswordFailure = () => {
     $('#user-message').text('')
   }, 2000)
   $('#btn-change-password').trigger('reset')
+  $('form').trigger('reset')
 }
 
 const failure = () => {
@@ -80,7 +86,7 @@ const failure = () => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
-  // $('form').trigger('reset')
+  $('form').trigger('reset')
 }
 
 const signOutFailure = () => {

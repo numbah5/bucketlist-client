@@ -36,6 +36,11 @@ const getListItemsSuccess = function (responseData) {
   $('#get-list-items').html(formattedListItems)
   $('form').trigger('reset')
   showOwnership()
+
+  store.listItems.forEach(item => {
+    if (!item.boolean) { $(`#inputA${item._id}`).attr('checked', true) }
+    if (item.boolean) { $(`#inputB${item._id}`).attr('checked', true) }
+  })
 }
 
 const getListItemsFailure = () => {
