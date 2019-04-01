@@ -13,7 +13,7 @@
               <h6 class="card-title text-center" style="font-size: 18px;">Update Bucket List Item</h6>
               <div class="form-label-group">
                 <input type="radio" id="inputB{{listItem._id}}" name="listItem[boolean]" value="true" class="form-control radio" /><span>complete</span><br>
-                <input type="radio" id="inputA{{listItem._id}}" name="listItem[boolean]" value="false" class="form-control radio" /><span>not complete</span><br>
+                <input checked type="radio" id="inputA{{listItem._id}}" name="listItem[boolean]" value="false" class="form-control radio" /><span>not complete</span><br>
               </div>
               <div class="form-label-group">
                 <input type="text" name="listItem[title]" id="inputT{{listItem._id}}" class="form-control" placeholder="Email address" />
@@ -25,7 +25,6 @@
               </div>
               <button data-owner="{{listItem.owner}}" class="delete-button btn btn-md btn-primary" type="button" data-id="{{listItem._id}}">Delete</button>
               <button data-owner="{{listItem.owner}}" class="update-button btn btn-md btn-primary" type="submit" data-id="{{listItem._id}}">Update</button>
-              <!-- <button id="sign-in-butto" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Add</button> -->
               <hr class="my-4">
             </form>
           </div>
