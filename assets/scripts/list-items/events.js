@@ -14,7 +14,6 @@ const onCreateListItem = (event) => {
     .then(ui.createListItemSuccess)
     .then(onGetListItems())
     .catch(ui.createListItemFailure)
-  // $('#create-list-item-button').trigger('reset')
 }
 
 const onGetListItems = function () {
@@ -27,26 +26,54 @@ const onGetListItems = function () {
 
 const onDeleteListItem = function (event) {
   const listItemId = $(event.target).data('id')
-  const owner = $(event.target).data('owner')
-  console.log(store.user._id)
-  console.log(owner)
+  $('#all' + listItemId).hide()
   event.preventDefault()
   api.deleteListItem(listItemId)
-    .then(ui.deleteListItemSuccess) // this
+    .then(ui.deleteListItemSuccess)
     .catch(ui.deleteListItemFailure)
-  // $('#<delete-item-form>').trigger('reset')
-  // $('#<user-message>').trigger('reset')
 }
-
+// const onCreateListItem = (event) => {
+//   event.preventDefault()
+//
+//   const formData = getFormFields(event.target)
+//   console.log(formData)
+//
+//   api.createListItem(formData)
+//     .then(ui.createListItemSuccess)
+//     .then(onGetListItems())
+//     .catch(ui.createListItemFailure)
+// }
 const onUpdateListItem = function (event) {
   event.preventDefault()
 
-  const formData = getFormFields(event.target)
+  const listItemId = event.target.id
+  console.log(event.target.id)
 
-  api.updateItem(formData.listItem)
+  const formData = getFormFields(event.target)
+  console.log(formData)
+  $('#all' + listItemId).hide()
+
+  api.updateListItem(listItemId, formData)
     .then(ui.updateListItemSuccess)
+    .then(onGetListItems())
     .catch(ui.updateListItemFailure)
-  $('#<update-item-form>').trigger('reset')
+}
+
+const onMarkAsComplete = (event) => {
+  event.preventDefault()
+  const currentItem = event.target.id
+  console.log(currentItem)
+  console.log($('#' + currentItem).html())
+  console.log($('#currentItem'))
+  if ($(event.target).attr('src') === '1') {
+    $('#' + currentItem).css('text-decoration', 'line-through')
+    $('#a' + currentItem).css('text-decoration', 'line-through')
+    $(event.target).attr('src', '2')
+  } else {
+    $('#' + currentItem).css('text-decoration', 'none')
+    $('#a' + currentItem).css('text-decoration', 'none')
+    $(event.target).attr('src', '1')
+  }
 }
 
 const addHandlers = function () {
@@ -58,5 +85,6 @@ module.exports = {
   onUpdateListItem,
   onDeleteListItem,
   onGetListItems,
-  onCreateListItem
+  onCreateListItem,
+  onMarkAsComplete
 }

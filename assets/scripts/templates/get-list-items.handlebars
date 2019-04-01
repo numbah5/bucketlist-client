@@ -1,45 +1,150 @@
+
+
+
+
 {{#each listItems as |listItem|}}
 
 
-  <form class="list-item" data-id="{{listItem._id}}" data-owner="{{listItem.owner}}">
+  <!-- <form id="{{listItem._id}}" class="list-item" data-id="{{listItem._id}}" data-owner="{{listItem.owner}}">
 
     <div class="update-field update-list-item">
       {{#if listItem.boolean}}
-      <label>Done?</label>
+      <label>Completed?</label>
       <p> Yes!</p>
       <p class="other-label">Change Done Status</p>
-      <input name="listItems[boolean]" type="checkbox" value="false">
+      <input name="listItem[boolean]" type="checkbox" value="false">
       {{else}}
-      <label>Done?</label>
+      <label>Completed?</label>
       <p>No</p>
       <label>Change Done Status</label>
-      <input name="listItems[boolean]" type="checkbox" value="true">
+      <input name="listItem[boolean]" type="checkbox" value="true">
       {{/if}}
     </div>
 
     <div class="update-field update-list-item">
-      <label>{{listItem.owner}}
-        +++++++++++++++++++++++
-        {{listItem._id}}</label>
-      <p>{{limit listItem.title 15}}</p>
+      <label>Title:</label>
+      <p style="background-color: lightpink; width: 200px;">{{limit listItem.title 15}}</p>
       <p class="other-label">Change Title:</p>
-      <input name="listItems[title]" type="text" placeholder="Title">
+      <input name="listItem[title]" type="text" placeholder="Title">
     </div>
 
     <div class="update-field update-location">
       <label>Description:</label>
-      <p>{{listItem.description}}</p>
+      <p style="background-color: lightpink; width: 200px;">{{listItem.description}}</p>
       <p class="other-label">Change Description:</p>
-      <input name="listItems[description]" type="text" placeholder="Description">
+      <input name="listItem[description]" type="text" placeholder="Description">
     </div>
 
     <div class="update-list-item">
-      <button type="submit" value="Update List Item">Update</button>
+      <button data-id="{{listItem._id}}" class="update-button" type="submit" value="Update List Item">Update</button>
     </div>
     <div class="delete-list-item">
-      <button id="delete-button-{{listItem._id}}" data-owner="{{listItem.owner}}" class="delete-button" type="button" data-id="{{listItem._id}}">Delete</button>
+      <button data-owner="{{listItem.owner}}" class="delete-button" type="button" data-id="{{listItem._id}}">Delete</button>
     </div>
+    <hr class="my-4">
 
-  </form>
+  </form> -->
+  <!-- <div class="list-item container" data-id="{{listItem._id}}" data-owner="{{listItem.owner}}">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h4 class="card-title text-center" style="font-size: 30px;">{{listItem.title}}</h4>
+            <h6 class="card-title text-center" style="font-size: 22px;">{{listItem.description}}</h6>
+            <form id="{{listItem._id}}">
+              <div class="form-label-group">
+                <input type="checkbox" name="listItem[title]" value="false" class="form-control" placeholder="complete" />
+                <label for="inputBoolean">Complete?</label>
+              </div>
+              <div class="form-label-group">
+                <input type="text" name="listItem[title]" class="form-control" placeholder="Email address" />
+                <label for="inputEmailSignIx">New Title</label>
+              </div>
+              <div class="form-label-group">
+                <input type="text" name="listItem[description]" class="form-control" placeholder="Password" required>
+                <label for="inputPasswordSignIx">New Description</label>
+              </div>
+              <button data-owner="{{listItem.owner}}" class="delete-button" type="button" data-id="{{listItem._id}}">Delete</button>
+              <hr class="my-4">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
 
-{{/each}}
+
+
+
+
+
+
+    <div class="container list-item" id="all{{listItem._id}}"data-id="{{listItem._id}}" data-owner="{{listItem.owner}}">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h4 class="card-title text-center list-title" data-bool="{{listItem.boolean}}" id="{{listItem._id}}" src="1" data-owner="{{listItem.owner}}" style="font-size: 30px;">{{listItem.title}}</h4>
+              <h6 class="card-title text-center list-description" id="a{{listItem._id}}" data-owner="{{listItem.owner}}" style="font-size: 22px;">{{listItem.description}}</h6>
+              <hr class="my-4">
+              <h6 class="card-title text-center" style="font-size: 18px;">Update Bucket List Item</h6>
+
+              <form id="{{listItem._id}}" class="form-update">
+                <div class="form-label-group">
+                  <input type="radio" id="inputB{{listItem._id}}" name="listItem[boolean]" value="true" class="form-control radio"/><span>complete</span><br>
+                  <input type="radio" id="inputA{{listItem._id}}" name="listItem[boolean]" value="false" class="form-control radio"/><span>not complete</span><br>
+                  <!-- <label for="inputA{{listItem._id}}">complete<br></label>
+                  <label for="inputB{{listItem._id}}">not complete</label> -->
+                </div>
+                <div class="form-label-group">
+                  <input type="text" name="listItem[title]" id="inputT{{listItem._id}}" class="form-control" placeholder="Email address" />
+                  <label for="inputT{{listItem._id}}">New Title</label>
+                </div>
+                <div class="form-label-group">
+                  <input type="text" name="listItem[description]" id="inputP{{listItem._id}}" class="form-control" placeholder="Password" required>
+                  <label for="inputP{{listItem._id}}">New Description</label>
+                </div>
+                <button data-owner="{{listItem.owner}}" class="delete-button btn btn-md btn-primary" type="button" data-id="{{listItem._id}}">Delete</button>
+                <button data-owner="{{listItem.owner}}" class="update-button btn btn-md btn-primary" type="submit" data-id="{{listItem._id}}">Update</button>
+                <!-- <button id="sign-in-butto" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Add</button> -->
+                <hr class="my-4">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="get-list-items"></div>
+
+
+
+
+
+
+  <!-- <div id="{{listItem._id}}" class="list-item container" data-id="{{listItem._id}}" data-owner="{{listItem.owner}}">
+    <h4 class="card-title text-center" style="font-size: 30px;">{{listItem.title}}</h4>
+    <h6 class="card-title text-center" style="font-size: 22px;">{{listItem.description}}</h6>
+      <form>
+        <div class="btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input name="listItem[boolean]" type="checkbox" checked autocomplete="off"> Complete
+          </label>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">New Title:</span>
+          </div>
+          <input type="text" name="listItem[title]" class="form-control"/>
+        </div>
+
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">New Description</span>
+          </div>
+          <textarea name="listItem[description]" class="form-control" aria-label="With textarea"></textarea>
+        </div>
+      <button data-owner="{{listItem.owner}}" class="delete-button" type="button" data-id="{{listItem._id}}">Delete</button>
+      <button data-owner="{{listItem.owner}}" class="update-button" type="submit" data-id="{{listItem._id}}">Update</button>
+    </form>
+</div>
+{{/each}} -->

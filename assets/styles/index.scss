@@ -26,12 +26,19 @@ body {
   padding: 2rem;
 }
 
+.list-title {
+  cursor: pointer;
+}
+
 .form-signin {
   width: 100%;
 }
 
 .list-item {
   display: none;
+  background-color: lightgreen;
+  // height: 200px;
+  margin: 10px;
 }
 
 .form-signin .btn {
