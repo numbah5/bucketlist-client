@@ -22,7 +22,6 @@ const signInSuccess = (responseData) => {
   $('#bucket-list-page').show()
   $('#user-message').text('successfully signed In!')
   store.user = responseData.user
-  console.log(store)
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
