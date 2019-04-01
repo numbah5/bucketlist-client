@@ -9,10 +9,6 @@ const listItemsEvents = require('./list-items/events.js')
 // const hideOwnership = () => { $('.list-item').hide() }
 
 $(() => {
-  // authEvents.addHandlers()
-  listItemsEvents.addHandlers()
-  // $('.owned').hide()
-  // hideOwnership()
   $('#form-sign-up').on('submit', authEvents.onSignUp)
   $('#form-sign-in').on('submit', authEvents.onSignIn)
   $('#sign-up').hide()
@@ -30,5 +26,5 @@ $(() => {
   $('#form-create-list-items').on('submit', listItemsEvents.onCreateListItem)
   $('#get-list-items').on('submit', '.form-update', listItemsEvents.onUpdateListItem)
   $('#get-list-items').on('click', '.delete-button', listItemsEvents.onDeleteListItem)
-  // $('#get-list-items').on('click', '.list-title', listItemsEvents.onMarkAsComplete)
+  $('#get-list-items').on('click', '.list-title', listItemsEvents.showUpdateForm)
 })

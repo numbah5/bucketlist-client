@@ -5,6 +5,16 @@ const formatListItems = require('../templates/get-list-items.handlebars')
 
 const showOwnership = () => {
   $(`.list-item[data-owner=${store.user._id}]`).show()
+  $('.form-update').hide()
+  console.log(store.listItems)
+  for (let i = 0; i < store.listItems.length; i++) {
+    if (store.listItems[i].boolean === true) {
+      const target = store.listItems[i]._id
+      console.log(target)
+      $('#title' + target).css('text-decoration', 'line-through')
+      $('#description' + target).css('text-decoration', 'line-through')
+    }
+  }
   // const bool = $(`.list-title[data-bool=${}]`)
   // console.log(bool)
   // for (let i = 0; i < bool.length; i++) {
