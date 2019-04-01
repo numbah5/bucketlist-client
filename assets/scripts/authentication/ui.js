@@ -54,7 +54,7 @@ const signOutSuccess = (responseData) => {
 const signUpFailure = () => {
   $('#sign-up-button').text('Sign Up Failed')
   setTimeout(function () {
-    $('sign-up-button').text('Sign Up')
+    $('#sign-up-button').text('Sign Up')
   }, 1000)
   $('#form-sign-up').trigger('reset')
 }
