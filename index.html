@@ -24,11 +24,11 @@
                   <h5 class="card-title text-center" style="font-size: 30px;">Sign In</h5>
                   <form id="form-sign-in">
                     <div class="form-label-group">
-                      <input type="email" name=credentials[email] id="inputEmailSignIn" class="form-control" placeholder="Email address" />
+                      <input type="email" name="credentials[email]" id="inputEmailSignIn" class="form-control" placeholder="Email address" />
                       <label for="inputEmailSignIn">Email address</label>
                     </div>
                     <div class="form-label-group">
-                      <input type="password" name=credentials[password] id="inputPasswordSignIn" class="form-control" placeholder="Password" required>
+                      <input type="password" name="credentials[password]" id="inputPasswordSignIn" class="form-control" placeholder="Password" required>
                       <label for="inputPasswordSignIn">Password</label>
                     </div>
                     <button id="sign-in-button" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
@@ -131,25 +131,36 @@
         </div>
       </div>
       <main class="list-items">
-        <h3>Add List Items</h3>
-        <form id="create-list-items" style="display: flex; align-items: center; border-radius: 7px;">
-          <div>
-            <label>Done?</label>
-            <input name="listItems[boolean]" type="checkbox" value="false">
+        <p style="font-size: 60px; text-align: center;">Bucket List</p>
+        <div id="sign" class="container">
+          <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
+              <div class="card card-signin my-5">
+                <div class="card-body">
+                  <h5 class="card-title text-center" style="font-size: 30px;">Create New Bucket List Event</h5>
+                  <form id="form-create-list-items">
+                    <!-- <div class="form-label-group">
+                      <input type="checkbox" name="listItem[title]" id="inputBoolean" value="false" class="form-control" placeholder="complete" />
+                      <label for="inputBoolean">complete</label>
+                    </div> -->
+                    <div class="form-label-group">
+                      <input type="text" name="listItem[title]" id="inputEmailSignIx" class="form-control" placeholder="Email address" />
+                      <label for="inputEmailSignIx">Title</label>
+                    </div>
+                    <div class="form-label-group">
+                      <input type="text" name="listItem[description]" id="inputPasswordSignIx" class="form-control" placeholder="Password" required>
+                      <label for="inputPasswordSignIx">Description</label>
+                    </div>
+                    <button id="sign-in-butto" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Add</button>
+                    <hr class="my-4">
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <label> Title:</label>
-            <input name="listItems[title]" type="text" placeholder="Title" required=true>
-          </div>
-          <div>
-            <label>Description:</label>
-            <input name="listItems[description]" type="text" placeholder="Description" required=true style="width: 500px;">
-          </div>
-          <button id="create-list-item-button" type="submit" value="Create List Item" style="border-radius: 7px; background-color: maroon; color: white;">Add</button>
-        </form>
+        </div>
         <h3>My Bucket List</h3>
         <div id="get-list-items"></div>
-        <p class="bucket-list-item">HEY I'M A MAKE BELIEVE LITTLE BUCKET LIST THINGY GOAL BUT NOT A GOAL SO NOT SURE WHAT I REALLY AM</p>
       </main>
     </section>
   </body>

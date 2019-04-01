@@ -3,8 +3,11 @@
 const store = require('../store.js')
 // const app = require('../app.js')
 
+const hideOwnership = () => { $('.list-item').hide() }
+
 const signUpSuccess = () => {
   // $('#inputEmailSignIn').on('click')
+  $('#form-sign-up').trigger('reset')
   $('#user-message').text('successfully signed up!')
   setTimeout(function () {
     $('#user-message').text('')
@@ -13,23 +16,19 @@ const signUpSuccess = () => {
 }
 
 const signInSuccess = (responseData) => {
+  $('#form-sign-in').trigger('reset')
   $('#authentication-page').hide()
   $('#bucket-list-page').show()
   $('#user-message').text('successfully signed In!')
-  // store.userId = responseData.user._id
   store.user = responseData.user
-  console.log('responseData:' + responseData)
-  console.log('responseData.user:' + responseData.user)
-  console.log('responseData.user.token:' + responseData.user.token)
-  console.log('store:' + store)
-  console.log('store.user:' + store.user)
-  console.log('store:' + store)
+  console.log(store)
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
 }
 
 const changePasswordSuccess = (responseData) => {
+  $('form').trigger('reset')
   // need to create ID in HTML for this listener
   $('#user-message').text('successfully changed password!')
   setTimeout(function () {
@@ -39,19 +38,24 @@ const changePasswordSuccess = (responseData) => {
 
 const signOutSuccess = (responseData) => {
   $('#user-message').text('successfully signed Out!')
-  $('form').trigger('reset')
+  $('.list-item').trigger('reset')
   store.user = null
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
+  $('get-list-items').html('')
+  $('#sign-up').hide()
+  $('#bucket-list-page').hide()
+  $('#authentication-page').show()
+  hideOwnership()
 }
 
 const signUpFailure = () => {
-  $('#sign-up-button').text('error on sign up')
+  $('#user-message').text('error on sign up')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
-  $('#sign-up-form').trigger('reset')
+  $('#form-sign-up').trigger('reset')
 }
 
 const signInFailure = () => {
@@ -59,7 +63,7 @@ const signInFailure = () => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
-  $('#sign-in-form').trigger('reset')
+  $('#form-sign-in').trigger('reset')
 }
 
 const changePasswordFailure = () => {
