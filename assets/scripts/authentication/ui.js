@@ -1,20 +1,16 @@
 'use strict'
 
 const store = require('../store.js')
-// const app = require('../app.js')
 
 const hideOwnership = () => { $('.list-item').hide() }
 
 const signUpSuccess = () => {
-  // $('#inputEmailSignIn').on('click')
   $('form').trigger('reset')
   $('#form-sign-up').trigger('reset')
   $('#sign-up-button').text('Sign Up Successful!')
   setTimeout(function () {
     $('#sign-up-button').text('Sign up')
   }, 2000)
-
-  // $('form').trigger('reset')
 }
 
 const signInSuccess = (responseData) => {
@@ -31,7 +27,6 @@ const signInSuccess = (responseData) => {
 
 const changePasswordSuccess = (responseData) => {
   $('form').trigger('reset')
-  // need to create ID in HTML for this listener
   $('#user-message').text('Successfully Changed Password!')
   $('#changePasswordModal').modal('hide')
   setTimeout(function () {
