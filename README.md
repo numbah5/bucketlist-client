@@ -6,7 +6,7 @@ This is the client repository for the web app -- Bucket List. This website allow
 - Bucket List Back End Repo: https://github.com/numbah5/bucketlist-api
 - Deployed Site: https://numbah5.github.io/bucketlist-client/
 - Heroku: https://bucketlist-app-api.herokuapp.com/
--
+
 ## How it works
 As a user, one can create, read, update and delete bucketlist items. This tool is useful when user need a way to manage their life's lists of things to accomplish.
 
