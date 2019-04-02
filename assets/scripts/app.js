@@ -2,6 +2,7 @@ const authEvents = require('./authentication/events.js')
 const listItemsEvents = require('./list-items/events.js')
 
 $(() => {
+  $('.modal').on('hidden.bs.modal', function () { $(this).find('form').trigger('reset') })
   $('#form-sign-up').on('submit', authEvents.onSignUp)
   $('#form-sign-in').on('submit', authEvents.onSignIn)
   $('#sign-up').hide()
@@ -13,6 +14,7 @@ $(() => {
   $('#go-to-sign-in-button').on('click', () => {
     $('#sign-up').hide()
     $('#sign-in').show()
+    $('form').trigger('reset')
   })
   $('#btn-change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)

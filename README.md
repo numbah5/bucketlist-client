@@ -1,25 +1,27 @@
-# Bucket List Client
-This is the client repository for the web app -- Bucket List.
+## Bucket List Client
+This is the client repository for the web app -- Bucket List. This website allows users to view their bucket list, where they can add, update, and delete items.
 
 ## Directory
-Backend Repo: https://github.com/numbah5/bucketlist-api
-Deployed Heroku: https://bucketlist-app-api.herokuapp.com/
-Deployed app: [https://numbah5.github.io/bucketlist-client/]
+- Bucket List Front End Repo: https://github.com/numbah5/bucketlist-client
+- Bucket List Back End Repo: https://github.com/numbah5/bucketlist-api
+- Deployed Site: https://numbah5.github.io/bucketlist-client/
+- Heroku: https://bucketlist-app-api.herokuapp.com/
 
 ## How it works
-As a user, one can create, read, update and delete bucketlist items. This tool is
-useful when user need a way to manage their life’s lists of things to accomplish.
+As a user, one can create, read, update and delete bucketlist items. This tool is useful when user need a way to manage their life's lists of things to accomplish.
 
 ## Technology
 - Ajax
 - Bootstrap
-- CSS
+- CSS3
+- Express.js
 - Handlebars
-- HTML
-- JavaScript Express
+- HTML5
+- JavaScript
 - jQuery
 - MongoDB and Mongoose
 - Node.js
+- Sass
 
 ## User Stories
 As an unregistered user, I would like to sign up with email and password.
@@ -37,7 +39,11 @@ As a signed in user, I would like to see all my bucket list items.
 ## Entity Relationship Diagram
 [ERD]https://i.imgur.com/sVMAU3S.jpg
 
-## Reach Goal(s)
+## Future Goal(s)
+In future iterations, we would like to add some animation, especially in the
+bucket list title. Ideally, we'd also spend more time on styling as well; we
+used Bootstrap templates, and customized them just enough for MVP.
+
 Integrate with a 3rd location-based API:
   - Allows a user to search for a location or venue to add to their bucket list items.
   - Autofill input field.
