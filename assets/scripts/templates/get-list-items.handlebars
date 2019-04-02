@@ -3,11 +3,11 @@
   <div class="container list-item" id="all{{listItem._id}}" data-id="{{listItem._id}}" data-owner="{{listItem.owner}}">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-12 mx-auto" style="margin-top: -20px;">
-        <div class="card card-signin my-5">
+        <div class="">
           <div class="card-body">
             <h4 class="card-title text-center list-title" data-id="{{listItem._id}}" data-bool="{{listItem.boolean}}" id="title{{listItem._id}}" src="1" data-owner="{{listItem.owner}}" style="font-size: 30px;">{{listItem.title}}</h4>
             <h6 class="card-title text-center list-description" id="description{{listItem._id}}" data-owner="{{listItem.owner}}" style="font-size: 22px;">{{listItem.description}}</h6>
-
+            <hr class="my-4">
             <form id="{{listItem._id}}" class="form-update">
               <hr class="my-4">
               <h6 class="card-title text-center" style="font-size: 18px;">Update Bucket List Item</h6>
