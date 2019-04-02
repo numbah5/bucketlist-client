@@ -6,8 +6,8 @@
 }
 
 body {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
+  background: #F0EAD6;
+  // background: linear-gradient(to right, #0062E6, #33AEFF);
 }
 
 .card-signin {
@@ -20,6 +20,16 @@ body {
   margin-bottom: 2rem;
   font-weight: 300;
   font-size: 1.5rem;
+}
+
+.btn {
+  background-color: Tan;
+  border-radius: 0px;
+  border: 1px solid black;
+}
+
+.btn:hover {
+  background-color: Sienna;
 }
 
 .card-signin .card-body {
@@ -36,9 +46,11 @@ body {
 
 .list-item {
   display: none;
-  background-color: lightgreen;
-  // height: 200px;
-  margin: 10px;
+}
+
+.flip {
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
 }
 
 .form-signin .btn {
@@ -112,22 +124,12 @@ body {
   color: #777;
 }
 
-.btn-google {
-  color: white;
-  background-color: #ea4335;
-}
-
-.btn-facebook {
-  color: white;
-  background-color: #3b5998;
-}
-
 .authentication-page {
   height: 100vh;
 }
 
 .bucket-list-page {
-  height: 100vh;
+  height: auto;
   background-color: #F0EAD6;
 }
 

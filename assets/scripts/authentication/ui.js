@@ -20,8 +20,8 @@ const signInSuccess = (responseData) => {
   $('#bucket-list-page').show()
   $('#user-message').text('Successfully Signed In!')
   store.user = responseData.user
-  $('#email').text(store.user.email)
-  $('#full-name').text(`${store.user.firstName} ${store.user.lastName}`)
+  $('#email').text('Email: ' + store.user.email)
+  $('#full-name').text(`Name: ${store.user.firstName} ${store.user.lastName}`)
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
@@ -53,18 +53,26 @@ const signOutSuccess = (responseData) => {
 }
 
 const signUpFailure = () => {
+  $('#sign-up-button').css('background-color', 'red')
+  setTimeout(function () {
+    $('#sign-up-button').css('background-color', 'Tan')
+  }, 2000)
   $('#sign-up-button').text('Sign Up Failed')
   setTimeout(function () {
     $('#sign-up-button').text('Sign Up')
-  }, 1000)
+  }, 2000)
   $('#form-sign-up').trigger('reset')
 }
 
 const signInFailure = () => {
+  $('#sign-in-button').css('background-color', 'red')
+  setTimeout(function () {
+    $('#sign-in-button').css('background-color', 'Tan')
+  }, 2000)
   $('#sign-in-button').text('Sign in Failed')
   setTimeout(function () {
     $('#sign-in-button').text('Sign In')
-  }, 1000)
+  }, 2000)
   $('#form-sign-in').trigger('reset')
   $('form').trigger('reset')
 }

@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
       <!-- Do not add `script` tags-->
@@ -13,10 +14,11 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div id="user-message"></div>
+      <div id="user-message" style="width: 500px; height: 20px;"></div>
 
       <section class="authentication-page" id="authentication-page">
-        <p style="font-size: 60px; text-align: center;">Bucket List</p>
+        <img class="animated flip delay-1s" style="height: 40px; position: absolute; left:10px; bottom: 10px;" src="public/bucket.png" alt="bucket">
+        <p  style="font-size: 60px; color: saddlebrown; text-align: center;">Bucket List</p>
         <div id="sign-in" class="container">
           <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
@@ -87,7 +89,7 @@
         </nav>
         <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div id="account-modal" class="modal-dialog" role="document">
-          <div class="modal-content" style="margin-top: 50px; background-color: #222; height: 96vh; margin-top: -27px;">
+          <div class="modal-content" style="margin-top: 50px; background-color: black; height: 96vh; margin-top: -27px;">
             <div class="modal-header" style="color: white;">
               <h1 class="modal-title modal-dialog" id="exampleModalLabel">Account</h1>
               <div id="changePasswordModalMessages" class="modal-messages" style="font-weight: 700; font-size: 26px; color: red;"></div>
@@ -128,18 +130,14 @@
         </div>
       </div>
       <main class="list-items">
-        <p style="font-size: 60px; text-align: center;">Bucket List</p>
+        <p style="font-size: 60px; color: saddlebrown; text-align: center;">Bucket List</p>
         <div id="sign" class="container">
           <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
-              <div class="card card-signin my-5">
+            <div class="col-sm-12 col-md-12 col-lg-12 mx-auto" style="margin-top: -20px;">
+              <div class="">
                 <div class="card-body">
                   <h5 class="card-title text-center" style="font-size: 30px;">Create New Bucket List Event</h5>
                   <form id="form-create-list-items">
-                    <!-- <div class="form-label-group">
-                      <input type="checkbox" name="listItem[title]" id="inputBoolean" value="false" class="form-control" placeholder="complete" />
-                      <label for="inputBoolean">complete</label>
-                    </div> -->
                     <div class="form-label-group">
                       <input type="text" name="listItem[title]" id="inputEmailSignIx" class="form-control" placeholder="Email address" />
                       <label for="inputEmailSignIx">Title</label>
@@ -156,7 +154,9 @@
             </div>
           </div>
         </div>
-        <h3>My Bucket List</h3>
+        <h3 style="text-align: center; margin-bottom: 0px; color: saddlebrown; font-size: 36px; font-weight: 600;">My Bucket List</h3>
+        <p style="text-align: center;">click on title to update</p>
+        <hr class="my-4">
         <div id="get-list-items"></div>
       </main>
     </section>
