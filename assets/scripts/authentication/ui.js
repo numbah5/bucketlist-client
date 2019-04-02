@@ -9,7 +9,7 @@ const signUpSuccess = () => {
   // $('#inputEmailSignIn').on('click')
   $('form').trigger('reset')
   $('#form-sign-up').trigger('reset')
-  $('#sign-up-button').text('Sign up Successful!')
+  $('#sign-up-button').text('Sign Up Successful!')
   setTimeout(function () {
     $('#sign-up-button').text('Sign up')
   }, 2000)
@@ -22,7 +22,7 @@ const signInSuccess = (responseData) => {
   $('#form-sign-in').trigger('reset')
   $('#authentication-page').hide()
   $('#bucket-list-page').show()
-  $('#user-message').text('successfully signed In!')
+  $('#user-message').text('Successfully Signed In!')
   store.user = responseData.user
   setTimeout(function () {
     $('#user-message').text('')
@@ -32,7 +32,7 @@ const signInSuccess = (responseData) => {
 const changePasswordSuccess = (responseData) => {
   $('form').trigger('reset')
   // need to create ID in HTML for this listener
-  $('#user-message').text('successfully changed password!')
+  $('#user-message').text('Successfully Changed Password!')
   $('#changePasswordModal').modal('hide')
   setTimeout(function () {
     $('#user-message').text('')
@@ -41,7 +41,7 @@ const changePasswordSuccess = (responseData) => {
 
 const signOutSuccess = (responseData) => {
   $('form').trigger('reset')
-  $('#user-message').text('successfully signed Out!')
+  $('#user-message').text('Successfully Signed Out!')
   $('.list-item').trigger('reset')
   store.user = null
   setTimeout(function () {
@@ -73,7 +73,7 @@ const signInFailure = () => {
 }
 
 const changePasswordFailure = () => {
-  $('#user-message').text('error in changing password')
+  $('#user-message').text('Error In Changing Password')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
@@ -82,7 +82,7 @@ const changePasswordFailure = () => {
 }
 
 const failure = () => {
-  $('#user-message').text('something went wrong')
+  $('#user-message').text('Something Went Wrong')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
@@ -91,7 +91,7 @@ const failure = () => {
 
 const signOutFailure = () => {
   $('#sign-out-button').on('submit', () => {
-    $('#user-message').text('error on sign out')
+    $('#user-message').text('Error On Sign Out')
     setTimeout(function () {
       $('#user-message').text('')
     }, 2000)
