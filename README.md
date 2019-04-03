@@ -34,10 +34,16 @@ As a signed in user, I would like to delete my bucket list item.
 As a signed in user, I would like to see all my bucket list items.
 
 ## Wireframe
-[Wireframe]https://imgur.com/FWO58Lt
+[Wireframe](https://imgur.com/FWO58Lt)
 
 ## Entity Relationship Diagram
-[ERD]https://i.imgur.com/sVMAU3S.jpg
+[ERD](https://i.imgur.com/sVMAU3S.jpg)
+
+## Planning, process, and problem-solving strategies
+1. Planned page layout via wireframe.
+2. Discussed user interface buttons and forms.
+3. Mapped HTML elements with eventlisteners to control user experience.
+4. Linked the backend api with the front-end browser.
 
 ## Future Goal(s)
 In future iterations, we would like to add some animation, especially in the
@@ -52,10 +58,14 @@ Integrate with a 3rd location-based API:
   - Allow users to make certain list items public, but default to private.
   - Allow users to upload an image when they complete an item.
 
+  ## [License](LICENSE)
 
+  1. All content is licensed under a CC­BY­NC­SA 4.0 license.
+  2. All software code is licensed under GNU GPLv3. [ ] For commercial use or
+      alternative licensing, please contact legal@ga.co.
 ## Members
-* [Allan Oliveira]
-* [Aristotle Anderson, "Rex"]
-* [Henrique Oliveria]
-* [Rishi Surana]
-* [Vicky Rockingster]
+* Allan Oliveira
+* Aristotle Anderson, "Rex"
+* Henrique Oliveria
+* Rishi Surana
+* Vicky Rockingster
